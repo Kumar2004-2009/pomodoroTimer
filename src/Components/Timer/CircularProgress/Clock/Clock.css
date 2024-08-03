@@ -1,0 +1,26 @@
+.clock-container{
+    display: grid;
+  place-items: center;
+}
+.timer-text{
+    font-size: 10rem;
+}
+.start-pause-button{
+    all:unset;
+  text-align: center;
+  font-size: 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+.reset{
+    all:unset;
+  text-align: center;
+  font-size: 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  color: cyan;
+}

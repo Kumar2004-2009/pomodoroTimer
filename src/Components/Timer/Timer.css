@@ -1,0 +1,11 @@
+.timer-container{
+    width: 45rem;
+    height: 45rem;
+    background: #851d15;
+    margin: 4rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: -50px -50px 150px rgba(158,158,159,0.2),
+    50px -10px 100px rgba(0,0,0,0.5);
+}

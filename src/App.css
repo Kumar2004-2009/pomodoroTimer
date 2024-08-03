@@ -1,0 +1,17 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+.title{
+    font-size: 6rem;
+  pad: 2rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.cog-open{
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+}

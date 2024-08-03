@@ -1,0 +1,16 @@
+.outer-circle {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(#d83633 var(--progress), transparent var(--progress));
+}
+
+.inner-circle {
+    width: 38rem;
+    height: 38rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}

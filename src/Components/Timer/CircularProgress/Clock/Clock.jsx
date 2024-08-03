@@ -1,25 +1,39 @@
-import React,{useContext,useEffect} from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import { StateContext } from '../../../StateProvider';
 import './Clock.css'
+import beepAudio from '../../../../../public/beep.mp3'
 
 
 const Clock = () => {
     const {time,setTime}=useContext(StateContext);
   const {isActive,setIsActive,initTime}=useContext(StateContext);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audio = new Audio(beepAudio);
+
+  useEffect(() => {
+    if (isActive && time === 0 && !isPlaying) {
+      audio.play();
+      setIsPlaying(true);
+    }
+  }, [isActive, time, isPlaying]);
 
   useEffect(()=>{
-    if(isActive &&time>0){
+    if(isActive &&time>0 && !isPlaying){
       const interval=setInterval(()=>{
         setTime((time)=>time-1)
       },1000)
       return ()=>{
         clearInterval(interval)
       }
+      
     }
-  },[time,isActive]);
+  },[time,isActive,isPlaying]);
 
   const toggleClock=()=>{
     setIsActive(!isActive);
+    if (!isActive) {
+      setIsPlaying(false);
+    }
   }
 
   const getTime=(time)=>{
@@ -31,6 +45,9 @@ const Clock = () => {
   const resetTime=()=>{
     setTime(initTime);
     setIsActive(false);
+    setIsPlaying(false);
+    audio.pause();
+    audio.currentTime = 0;
   }
   return (
     <div className='clock-container'>
